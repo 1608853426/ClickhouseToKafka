@@ -19,6 +19,7 @@
         <include refid="Base_Column_List" />
         from cpu_msg_target
         where node = #{node}
+        order by current_time desc
         limit 1
     </select>
     <select id="selectList" resultMap="BaseResultMap" >
