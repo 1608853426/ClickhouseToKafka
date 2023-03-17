@@ -1,0 +1,29 @@
+# 应用名称
+spring:
+  application:
+    name: ReadFromClickhouse
+  datasource:
+    type: ru.yandex.clickhouse.ClickHouseDataSource
+    click:
+      driver-class-name: ru.yandex.clickhouse.ClickHouseDriver
+      url: jdbc:clickhouse://47.92.173.118:8123/default
+      username: default
+      password: 123456
+      initialSize: 10
+      maxActive: 100
+      minIdle: 10
+      maxWait: 6000
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    lazy-loading-enabled: true
+    multiple-result-sets-enabled: true
+    use-generated-keys: true
+    default-statement-timeout: 60
+    default-fetch-size: 100
+  type-aliases-package: com.bupt.readfromclickhouse.entity
+

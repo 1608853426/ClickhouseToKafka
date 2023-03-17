@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bupt.readfromclickhouse">
+
+    <resultMap id="BaseResultMap" type="com.bupt.readfromclickhouse.entity.CpuMsgTarget">
+        <result column="node" property="node" />
+        <result column="cpu" property="cpu" />
+        <result column="cpu_percent" property="cpuPercent" />
+        <result column="memory" property="memory" />
+        <result column="memory_percent" property="memoryPercent" />
+        <result column="current_time" property="currentTime" />
+        <result column="event_time" property="eventTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        *
+    </sql>
+    <select id="selectByNode" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from cpu_msg_target
+        where node = #{node}
+        limit 1
+    </select>
+    <select id="selectList" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from cpu_msg_target
+    </select>
+
+</mapper>
