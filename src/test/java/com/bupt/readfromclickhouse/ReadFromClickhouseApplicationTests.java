@@ -22,4 +22,9 @@ class ReadFromClickhouseApplicationTests {
         }
     }
 
+    @Test
+    void test(){
+        CpuMsgTarget c = this.nodeResourceService.selectByNode("k8smaster");
+        System.out.println(c.getCurrentTime());
+    }
 }

@@ -3,6 +3,7 @@ package com.bupt.readfromclickhouse.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bupt.readfromclickhouse.entity.CpuMsgTarget;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
